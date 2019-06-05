@@ -1,11 +1,6 @@
-Jenkinsfile (Declarative Pipeline)
-pipeline {
-    agent { docker { image 'myapp' } }
-    stages {
-        stage('build') {
-            steps {
-                sh './deploy.sh'
-            }
-        }
-    }
+node {
+  git '…'
+  docker.image('myapp').withRun {c ->
+    sh './deploy.sh'
+  }
 }
