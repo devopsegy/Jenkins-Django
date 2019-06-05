@@ -8,6 +8,6 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./app:app
+      - .:/app
     command: >
-      sh -c "pyton manage.py runserver 0.0.0.0:800"
+      sh -c "python manage.py runserver 0.0.0.0:800"
