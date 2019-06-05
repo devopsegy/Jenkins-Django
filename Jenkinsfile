@@ -1,10 +1,10 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker { image 'project1_app' } }
+    agent { docker { image 'myapp' } }
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh './deploy.sh'
             }
         }
     }
