@@ -4,7 +4,7 @@ version: "3"
 services:
     app:
     container_name: myprofile
-    image: myprofile
+    image: djangoapp
     build:
       context: .
     ports:
