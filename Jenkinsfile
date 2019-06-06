@@ -5,11 +5,6 @@ node {
      sh "git rev-parse --short HEAD > .git/commit-id"                        
      commit_id = readFile('.git/commit-id').trim()
    }
-   stage('Test') {
-     steps {
-       sh ''
-     }
-   }
    stage('docker build') {
      docker.image('myapp').withRun {c ->
        sh 'docker kill myapp  > /dev/null 2>&1'
