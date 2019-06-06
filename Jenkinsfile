@@ -5,9 +5,9 @@ node {
      sh "git rev-parse --short HEAD > .git/commit-id"                        
      commit_id = readFile('.git/commit-id').trim()
    }
-   stage('test') {
+   stage('Test') {
      steps {
-       sh 'python -V'
+       sh 'pip install -r requirements.txt'
      }
    }
    stage('docker build') {
