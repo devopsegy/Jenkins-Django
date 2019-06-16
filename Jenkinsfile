@@ -11,6 +11,10 @@ node {
        sh 'docker rm myapp  > /dev/null 2>&1'
        sh 'docker-compose up -d'
     }
+    stage ("Wait for Creating Docker Container") {
+    echo 'Wait for Container Creation and Startup'
+    sleep 150
+    }
     stage('Testing Application') {
      def response = sh(script: 'curl http://localhost:8000/', returnStdout: true)
      echo '=========================Response===================' + response
