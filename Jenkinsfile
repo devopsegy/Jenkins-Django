@@ -13,7 +13,7 @@ node {
     }
     stage ("Wait for Creating Docker Container") {
     echo 'Wait for Container Creation and Startup'
-    sleep 60
+    sleep 30
     }
     stage('Testing Application') {
      def response = sh(script: 'curl http://139.162.171.242:8000/', returnStdout: true)
