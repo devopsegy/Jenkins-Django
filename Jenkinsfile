@@ -16,7 +16,7 @@ node {
     sleep 30
     }
     stage('Testing Application') {
-     def response = sh(script: 'curl http://139.162.171.242:8000/', returnStdout: true)
+     def response = sh(script: 'curl http://172.19.0.2:8000/', returnStdout: true)
      echo '=========================Response===================' + response
 
      }
