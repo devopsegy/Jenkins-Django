@@ -11,6 +11,6 @@ RUN pip install -r requirements.txt
 RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
-EXPOSE 8000/tcp
+
 RUN adduser profile
 USER profile
