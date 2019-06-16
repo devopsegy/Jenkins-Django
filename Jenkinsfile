@@ -10,13 +10,12 @@ node {
        sh 'docker kill myapp  > /dev/null 2>&1'
        sh 'docker rm myapp  > /dev/null 2>&1'
        sh 'docker-compose up -d'
-     }
-     {
-     stage('Testing Application') {
+    }
+    stage('Testing Application') {
      def response = sh(script: 'curl http://139.162.171.242:8000/', returnStdout: true)
      echo '=========================Response===================' + response
 
-      }
+     }
    }
  }
 }
